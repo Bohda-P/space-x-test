@@ -3,12 +3,12 @@ import { RoutesProvider } from './navigation';
 // Providers
 import { AppProviders } from './providers';
 // Components
-import { Header } from './components';
+import { NavigationBar } from './components';
 
 const App: React.FC = () => {
   return (
     <AppProviders>
-      <Header />
+      <NavigationBar />
       <RoutesProvider />
     </AppProviders>
   );

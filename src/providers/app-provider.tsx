@@ -1,12 +1,22 @@
 import React, { PropsWithChildren } from 'react';
+// Theme Provider
+import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 // Store Provider
-import { Provider as StoreProvider } from 'react-redux';
+import { RecoilRoot } from 'recoil';
+// Navigation
 import { BrowserRouter as Router } from 'react-router-dom';
-// Store
-import store from '../store/store';
+// Theme
+import { theme } from '../styles';
+// Graphql 
+import { ApolloProvider } from '@apollo/client';
+import { client } from '../graphql';
 
 export const AppProviders: React.FC<PropsWithChildren> = ({ children }) => (
-  <StoreProvider store={store}>
-    <Router>{children}</Router>
-  </StoreProvider>
+  <RecoilRoot>
+    <ApolloProvider client={client}>
+      <StyledThemeProvider theme={theme}>
+        <Router>{children}</Router>
+      </StyledThemeProvider>
+    </ApolloProvider>
+  </RecoilRoot>
 );
