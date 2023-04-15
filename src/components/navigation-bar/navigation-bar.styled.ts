@@ -17,11 +17,20 @@ export const Container = styled.div(
   `
 );
 
-export const LogoContainer = styled(NavLink)`
-  padding: 0 80px;
-  display: flex;
-  align-items: center;
-`;
+export const LogoContainer = styled(NavLink)(
+  ({ theme: { palettes } }) => css`
+    padding: 0 80px;
+    display: flex;
+    align-items: center;
+    &:active {
+      transform: translateY(2px);
+      box-shadow: 0 0 2px ${palettes.gray};
+    }
+    &:hover {
+      opacity: 0.5;
+    }
+  `
+);
 
 export const Logo = styled.img`
   width: 229px;
@@ -48,6 +57,11 @@ export const MenuItem = styled(NavLink)(
     &.active {
       border-bottom: 1px solid ${palettes.white};
     }
+
+    &:hover {
+      color: ${palettes.subText};
+      border-color: ${palettes.subText};
+    }
   `
 );
 
@@ -69,9 +83,18 @@ export const FavoriteButton = styled(NavLink)(
     &.active {
       background-color: ${palettes.red};
     }
+    &:active {
+      transform: translateY(2px);
+      box-shadow: 0 0 2px ${palettes.gray};
+    }
+    &:hover {
+      opacity: 0.5;
+    }
   `
 );
 
 export const SignIn = styled(Button)`
   width: 163px;
 `;
+
+export const Image = styled.img``;

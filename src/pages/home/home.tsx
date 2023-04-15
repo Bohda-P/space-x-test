@@ -1,20 +1,43 @@
-// GraphQl
-import { useQuery } from '@apollo/client';
-import { GET_ROCKETS } from '../../graphql/queries';
+// Hooks
+import { useFavoriteTours, useToursData } from '../../store/hooks';
 // Components
-import { Background } from './components';
+import { Background, MainText, PaginationButtons } from './components';
 // Styled
-import { Container } from './home.styled';
-// Assets
-import { Satellite } from '../../assets/svg';
+import { Container, TitleContainer, ToursTitle, ToursContainer } from './home.styled';
+import { useState } from 'react';
+import { Slider } from '../../components';
+// Types
+import Swiper from 'swiper';
 
 const Home: React.FC = () => {
-  const { loading, error, data } = useQuery(GET_ROCKETS);
+  const { tours } = useToursData();
+  const { addToFavorite } = useFavoriteTours();
+  const [swiper, setSwiper] = useState<Swiper>();
+
+  const handleSetSwiper = (swipe: Swiper) => {
+    setSwiper(swipe);
+  };
 
   return (
     <>
       <Background />
-      <Container></Container>
+      <Container>
+        <MainText />
+        <ToursContainer>
+          <TitleContainer>
+            <ToursTitle id="tours">popular tours</ToursTitle>
+            <PaginationButtons
+              onLeftClick={() => swiper.slidePrev()}
+              onRightClick={() => swiper.slideNext()}
+            />
+          </TitleContainer>
+          <Slider
+            toursData={tours?.rockets}
+            forwardSwiper={handleSetSwiper}
+            onFavoriteCardButtonClick={addToFavorite}
+          />
+        </ToursContainer>
+      </Container>
     </>
   );
 };

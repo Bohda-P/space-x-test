@@ -1,8 +1,7 @@
 // Assets
 import { useLocation } from 'react-router-dom';
 import { Logo as LogoImage } from '../../assets/images';
-import { Heart } from '../../assets/svg';
-import { palettes } from '../../styles/palettes';
+import { Heart, WhiteHeart } from '../../assets/svg';
 // Styled
 import {
   Container,
@@ -13,6 +12,7 @@ import {
   MenuItem,
   SignIn,
   ButtonContainer,
+  Image,
 } from './navigation-bar.styled';
 
 const NavigationBarComponent: React.FC = () => {
@@ -30,10 +30,10 @@ const NavigationBarComponent: React.FC = () => {
         <MenuItem to="/about">About</MenuItem>
         <MenuItem to="/help">Help</MenuItem>
       </Menu>
+
       <ButtonContainer>
         <FavoriteButton to="/favorites">
-          {/* @ts-ignore */}
-          <Heart color={isFavorites ? palettes.white : palettes.mainText} />
+          <Image src={isFavorites ? WhiteHeart : Heart} />
         </FavoriteButton>
         <SignIn title="Sign In" />
       </ButtonContainer>

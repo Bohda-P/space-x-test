@@ -27,13 +27,13 @@ export const typography: Typography.FontStyle = {
     fontFamily: 'Syne',
     fontWeight: 700,
     fontSize: '24px',
-    lineHeight: '40px',
+    lineHeight: '28px',
   },
   bodySmall: {
     fontFamily: 'Lato',
     fontWeight: 300,
     fontSize: '24px',
-    lineHeight: '400px',
+    lineHeight: '28px',
   },
   caption: {
     fontFamily: 'Lato',

@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 import { APP_IMAGES } from '../../../../constants';
-import { Bullet, BulletContainer, Container, Slide, BulletBody } from './background.styled';
+import {
+  Bullet,
+  BulletContainer,
+  Container,
+  Slide,
+  BulletBody,
+  OpacityContainer,
+} from './background.styled';
 
 const Background: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -11,6 +18,7 @@ const Background: React.FC = () => {
 
   return (
     <Container>
+      <OpacityContainer />
       <Slide image={APP_IMAGES[activeIndex]}></Slide>
 
       <BulletContainer>

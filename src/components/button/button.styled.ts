@@ -17,5 +17,12 @@ export const Container = styled.button(
     text-transform: uppercase;
     font-weight: 600;
     cursor: pointer;
+    &:active {
+      transform: translateY(2px);
+      box-shadow: 0 0 2px ${palettes.gray};
+    }
+    &:hover {
+      opacity: 0.5;
+    }
   `
 );
