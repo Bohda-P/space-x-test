@@ -1,22 +1,26 @@
 // Hooks
+import { useState } from 'react';
 import { useFavoriteTours, useToursData } from '../../store/hooks';
 // Components
 import { Background, MainText, PaginationButtons } from './components';
+import { Loader, Slider } from '../../components';
 // Styled
 import { Container, TitleContainer, ToursTitle, ToursContainer } from './home.styled';
-import { useState } from 'react';
-import { Slider } from '../../components';
 // Types
 import Swiper from 'swiper';
 
 const Home: React.FC = () => {
-  const { tours } = useToursData();
+  const { tours, loading } = useToursData();
   const { addToFavorite } = useFavoriteTours();
   const [swiper, setSwiper] = useState<Swiper>();
 
   const handleSetSwiper = (swipe: Swiper) => {
     setSwiper(swipe);
   };
+
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <>

@@ -7,4 +7,5 @@ export const palettes: Palettes.Pattern = {
   red: '#DD377D',
   blue: '#D3EAFF',
   gray: '#ECECEC',
+  loader: '#F45B69',
 };

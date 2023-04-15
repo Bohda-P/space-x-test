@@ -9,6 +9,7 @@ declare global {
       mainText: string;
       subText: string;
       gray: string;
+      loader: string;
     }
   }
 }
