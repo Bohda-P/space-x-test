@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 // Assets
-import { Astronaut } from '../../../../assets/svg';
+import { Astronaut } from '../../../../assets/images';
 
 export const Container = styled.div`
   display: flex;

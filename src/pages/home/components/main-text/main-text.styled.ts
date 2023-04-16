@@ -16,6 +16,7 @@ export const Title = styled.h1(
     ${typography.title};
     margin-top: -90px;
     text-transform: uppercase;
+    text-align: center;
   `
 );
 
@@ -24,6 +25,14 @@ export const Subtitle = styled.h1(
     color: ${palettes.white};
     ${typography.huge};
     text-transform: uppercase;
+    @media (max-width: 1400px) {
+      font-size: 240px;
+      line-height: 250px;
+    }
+    @media (max-width: 900px) {
+      font-size: 180px;
+      line-height: 190px;
+    }
   `
 );
 

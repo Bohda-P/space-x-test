@@ -58,6 +58,18 @@ export const BulletContainer = styled.div(
     justify-content: center;
     width: 100%;
     z-index: 100;
+
+    @media (max-width: 1400px) {
+      left: calc(50% - 30px);
+    }
+
+    @media (max-width: 1126px) {
+      top: calc(50% + 20px);
+    }
+
+    @media (max-width: 900px) {
+      left: calc(50% - 25px);
+    }
   `
 );
 

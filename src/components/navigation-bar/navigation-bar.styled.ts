@@ -14,12 +14,14 @@ export const Container = styled.div(
     left: 0;
     right: 0;
     z-index: 100;
+    @media (max-width: 1200px) {
+      padding: 13px 50px;
+    }
   `
 );
 
 export const LogoContainer = styled(NavLink)(
   ({ theme: { palettes } }) => css`
-    padding: 0 80px;
     display: flex;
     align-items: center;
     &:active {
